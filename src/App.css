@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+body {
+  background-color: #FBF3EB;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  padding: 20px 35px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-size: cover;
+  z-index: 9999;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 102px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+nav:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  width: 335px;
+  height: 368px;
+  left: 49px;
+  top: 270px;
+
+  color: #000000;
+} 
+
+button {
+  position: absolute;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 31px;
+  line-height: 38px;
+  color: beige;
+  background-color: orangered;
+  border-radius: 15px;
+  border: none;
+  padding: 4px 12px;
+  width: 176px;
+  height: 52px;
+  left: 62px;
+  top: 550px;
+}
+
+button:hover {
+  opacity: 50%;
+}
+
+.image1 {
+  position: absolute;
+  width: 374px;
+  height: 743px;
+  left: 750px;
+  top: 275px;
+}
+
+.image3 {
+  position: absolute;
+  width: 206px;
+  height: 446px;
+  left: 1150px;
+  top: 250px;
+}
+
+.image2 {
+  position: absolute;
+  width: 412px;
+  height: 314px;
+  left: 1150px;
+  top: 720px;
+}
+
+.image4 {
+  position: absolute;
+  width: 189px;
+  height: 446px;
+  left: 1375px;
+  top: 250px;
+}
+
+.image5 {
+  position: absolute;
+  width: 193px;
+  height: 772px;
+  left: 1600px;
+  top: 250px;
+}
+
+@media screen and (max-width: 575px) {
+
 }
