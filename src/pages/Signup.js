@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import Header from '../components/Header';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
 
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -10,7 +11,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
-  const [addUser, { error }] = useMutation(ADD_USER);
+//   const [addUser, { error }] = useMutation(ADD_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -26,26 +27,29 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    try {
-      const { data } = await addUser({
-        variables: { ...formState },
-      });
+    // try {
+    //   const { data } = await addUser({
+    //     variables: { ...formState },
+    //   });
 
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
+    //   Auth.login(data.addUser.token);
+    // } catch (e) {
+    //   console.error(e);
+    // }
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
-          <h4 className="card-header">Sign Up</h4>
-          <div className="card-body">
+    <main>
+        <Header />
+      <div >
+        <div >
+        
+          <div >
             <form onSubmit={handleFormSubmit}>
+            <h2>CREATE AN ACCOUNT:</h2>
+            <label for="username">USERNAME</label>
               <input
-                className="form-input"
+                className = "form-input"
                 placeholder="Your username"
                 name="username"
                 type="username"
@@ -53,8 +57,9 @@ const Signup = () => {
                 value={formState.username}
                 onChange={handleChange}
               />
+              <label for="email">EMAIL</label>
               <input
-                className="form-input"
+              className = "form-input"
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -62,8 +67,9 @@ const Signup = () => {
                 value={formState.email}
                 onChange={handleChange}
               />
+              <label for="password">PASSWORD</label>
               <input
-                className="form-input"
+                className = "form-input"
                 placeholder="******"
                 name="password"
                 type="password"
@@ -71,12 +77,12 @@ const Signup = () => {
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className="btn d-block w-100" type="submit">
+              <button id="signup" type="submit">
                 Submit
               </button>
             </form>
-
-            {error && <div>Signup failed</div>}
+            <img class="image1" src="./assets/images/painting7.png" alt="" />
+            {/* {error && <div>Signup failed</div>} */}
           </div>
         </div>
       </div>

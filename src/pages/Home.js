@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (<>
@@ -9,7 +10,7 @@ const Home = () => {
         ART SHOULD BE A CONVERSATION. LET'S TALK.
     </p>
     <button>
-        SIGN UP
+      <Link to="/signup"> SIGN UP</Link> 
     </button>
 </section>
 <div class="images">
