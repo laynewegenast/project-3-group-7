@@ -10,7 +10,7 @@ const Dashboard = () => {
         <Link to="/explore"> EXPLORE</Link> 
         <button type='submit' id='logout' className=''>LOGOUT</button>
 
-        {/* display for api images that have been commented on */}
+        {/* display for api images that have been commented on that will show up on feed */}
         </main>
     );
 };
