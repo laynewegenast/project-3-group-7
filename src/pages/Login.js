@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from "../components/Header"; 
 // import { useMutation } from '@apollo/client';
 // import { LOGIN_USER } from '../utils/mutations';
 
@@ -41,13 +42,12 @@ const Login = (props) => {
 
   return (
     <main >
-      <div >
-        <div >
-          <h4 >Login</h4>
+      <Header />
           <div >
             <form onSubmit={handleFormSubmit}>
+            <h2>LOGIN</h2>
               <input
-              
+              className = "form-input"
                 placeholder="Your email"
                 name="email"
                 type="email"
@@ -56,7 +56,7 @@ const Login = (props) => {
                 onChange={handleChange}
               />
               <input
-                
+                className = "form-input"
                 placeholder="******"
                 name="password"
                 type="password"
@@ -68,11 +68,9 @@ const Login = (props) => {
                 Submit
               </button>
             </form>
-
+            <img class="image1" src="./assets/images/painting7.png" alt="" /> 
             {/* {error && <div>Login failed</div>} */}
           </div>
-        </div>
-      </div>
     </main>
   );
 };
