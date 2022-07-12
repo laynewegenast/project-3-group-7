@@ -104,7 +104,6 @@ const SearchArt = () => {
             ? `Viewing ${searchedArt.length} results:`
             : 'Search for art to begin'}
         </h2>
-        <CardColumns>
           {searchedArt.map((art) => {
             return (
               <Card key={art.artId} border='dark'>
@@ -112,9 +111,9 @@ const SearchArt = () => {
                   <image src={art.image} alt={`The image of ${art.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  <p className='small'>Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{art.title}</Card.Title>
+                  <p className='small'>Artists: {art.artists}</p>
+                  <Card.Text>{art.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedArtIds?.some((savedArtId) => savedArtId === art.artId)}
@@ -128,8 +127,7 @@ const SearchArt = () => {
                 </Card.Body>
               </Card>
             );
-          })}
-        </CardColumns>
+          })};
   );
 };
 
