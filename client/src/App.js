@@ -15,9 +15,9 @@
 // import Login from './pages/Login';
 // import Signup from './pages/Signup';
 
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// });
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
 // const authLink = setContext((_, { headers }) => {
 //   const token = localStorage.getItem('id_token');
