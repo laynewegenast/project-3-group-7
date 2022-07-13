@@ -37,13 +37,13 @@ const resolvers = {
     },
 
     arts: async () => {
-      return User.find()
-        .select('-__v -password')
+      return Art.find()
+        
         .populate('comments')
         
-    },
     }
-  }
+    
+  },
 
   Mutation: {
     addUser: async (parent, args) => {
@@ -83,6 +83,14 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+
+    addArt: async (parent, args) => {
+      const art = await User.create(args);
+      const token = signToken(user);
+
+      return { token, art };
+    },
+    
     
   }
 };

@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     friendCount: Int
-    commentss: [Comment]
+    comments: [Comment]
     friends: [User]
   }
 
@@ -16,6 +16,15 @@ const typeDefs = gql`
     createdAt: String
     username: String
     
+  }
+
+  type Art {
+    _id: ID
+    artistAlphaSort: String
+    title: String
+    objectId: String
+    primaryImage: String
+    comments: [Comment]
   }
 
   
@@ -31,6 +40,7 @@ const typeDefs = gql`
     user(username: String!): User
     comments(username: String): [Comment]
     comment(_id: ID!): Comment
+    arts: [Art]
   }
 
   type Mutation {
@@ -38,6 +48,10 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentText: String!): Comment 
     addFriend(friendId: ID!): User
+    addArt (artistAlphaSort: String,
+      title: String,
+      objectId: String,
+      primaryImage: String): Auth
   }
 `;
 

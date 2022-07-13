@@ -34,6 +34,6 @@ const artSchema = new Schema({
   }
 );
 
-const Art = model('Comment', artSchema);
+const Art = model('Art', artSchema);
 
 module.exports = Art;
