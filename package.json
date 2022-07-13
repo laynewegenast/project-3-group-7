@@ -1,0 +1,19 @@
+{
+  "name": "project-3-group-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laynewegenast/project-3-group-7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laynewegenast/project-3-group-7/issues"
+  },
+  "homepage": "https://github.com/laynewegenast/project-3-group-7#readme"
+}
