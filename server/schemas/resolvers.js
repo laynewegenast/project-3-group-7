@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Comment } = require('../models');
+const { User, Comment, Art } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,7 +9,7 @@ const resolvers = {
         const userData = await User.findOne({ _id: context.user._id })
           .select('-__v -password')
           .populate('comments')
-          .populate('friends');
+          
 
         return userData;
       }
@@ -20,22 +20,30 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('comments')
-        .populate('friends');
+        
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('friends')
+    
         .populate('comments');
     },
     comments: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Comment.find(params).sort({ createdAt: -1 });
     },
     comment: async (parent, { _id }) => {
-      return Thought.findOne({ _id });
+      return Comment.findOne({ _id });
+    },
+
+    arts: async () => {
+      return User.find()
+        .select('-__v -password')
+        .populate('comments')
+        
+    },
     }
-  },
+  }
 
   Mutation: {
     addUser: async (parent, args) => {
