@@ -76,11 +76,18 @@ const SearchArt = () => {
 //       console.error(err);
 //     }
 //   };
+const logout = event => {
+  event.preventDefault();
+  Auth.logout();
+};
 
   return (
     <>
       <Header />
-        
+      <Link to="/dashboard"> DASHBOARD</Link> 
+        <a href="/" onClick={logout}>
+                LOGOUT
+              </a>
           <h1>Search for Art</h1>
           <form onSubmit={handleFormSubmit}>
                 <input
