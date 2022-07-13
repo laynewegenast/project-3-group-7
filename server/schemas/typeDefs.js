@@ -51,7 +51,7 @@ const typeDefs = gql`
     addArt (artistAlphaSort: String,
       title: String,
       objectId: String,
-      primaryImage: String): Auth
+      primaryImage: String): Art
   }
 `;
 
