@@ -36,7 +36,7 @@ const resolvers = {
       return Comment.findOne({ _id });
     },
 
-    arts: async () => {
+    arts: async (parent, args) => {
       return Art.find()
         
         .populate('comments')
@@ -86,9 +86,9 @@ const resolvers = {
 
     addArt: async (parent, args) => {
       const art = await User.create(args);
-      const token = signToken(user);
+    
 
-      return { token, art };
+      return {  art };
     },
     
     

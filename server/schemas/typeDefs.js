@@ -5,9 +5,9 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    friendCount: Int
+    
     comments: [Comment]
-    friends: [User]
+    
   }
 
   type Comment {
@@ -47,7 +47,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentText: String!): Comment 
-    addFriend(friendId: ID!): User
+    
     addArt (artistAlphaSort: String,
       title: String,
       objectId: String,
